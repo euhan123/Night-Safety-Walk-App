@@ -1,3 +1,6 @@
+import Amplify, { API } from 'aws=amplify';
+import React, { useEffect, useState} from 'react';
+
 import * as React from 'react';
 import 'react-native-gesture-handler';
 import { Button } from 'react-native';
@@ -15,6 +18,7 @@ import AccountScreen from './screens/Account';
 import ProfileScreen from './screens/Profile';
 import AdminScreen from './screens/Admin';
 import HomeScreen from './screens/Home';
+import MapScreen from './screens/Map';
 
 const Drawer = createDrawerNavigator();
 
@@ -34,6 +38,7 @@ const HomeDrawer = () => {
         <Drawer.Navigator>
             <Drawer.Screen name = "Home" component = {HomeTabs} options = {{ headerShown: false }} />
             <Drawer.Screen name = "Account" component = {AccountScreen} options = {{ headerShown: false }}/>
+            <Drawer.Screen name = "Map" component = {MapScreen} options = {{ headerShown: false }} />
             <Drawer.Screen
                 name = "Password Forget"
                 component = {PasswordForgetScreen}
@@ -72,6 +77,9 @@ const App = () => {
 
         setIsAuthenticated(true);
     }
+
+    const myAPI = "api9f9c28cf"
+    const path = "/customer/"
 
     return (
         <NavigationContainer>
