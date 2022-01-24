@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     },
 });
 
-const MapScreen = () => {
+function MapScreen () {
     const [emptyText, userInput] = React.useState('');
 
     return (

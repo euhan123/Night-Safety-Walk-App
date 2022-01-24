@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     },
 });
 
-const AdminScreen = () => {
+function AdminScreen () {
     return (
         <View style = {styles.container}>
             <Text> Admin Screen </Text>

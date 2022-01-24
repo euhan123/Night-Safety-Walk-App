@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     },
 });
 
-const ProfileScreen = () => {
+function ProfileScreen() {
     return (
         <View style = {styles.container}>
             <Text> Protected Profile Screen. </Text>

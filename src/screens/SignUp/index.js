@@ -1,5 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
+import { Auth } from 'aws-amplify';
+
+state = {
+    username: '', email: '', password: ''
+}
 
 const styles = StyleSheet.create ({
     container: {
@@ -9,11 +14,17 @@ const styles = StyleSheet.create ({
     },
 });
 
-const SignUpScreen = ({ onSignUp }) => {
+async signUp = () => {
+    const { username, email, password } = this.state
+    await Auth.signUp({ username, password, attributes: { email }})
+    console.log('user successfully signed up')
+}
+
+function SignUpScreen() {
+    
     return (
         <View style = {styles.container}>
             <Text> Public Sign Up Screen. </Text>
-            <Button title = "Sign Up" onPress = {onSignUp} />
         </View>
     )
 }

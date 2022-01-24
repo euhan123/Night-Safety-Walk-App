@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create ({
     container: {
         flex: 1,
         alignItems: 'center',
@@ -9,12 +9,12 @@ const styles = StyleSheet.create({
     },
 });
 
-function HomeScreen() {
+function SplashScreen () {
     return (
         <View style = {styles.container}>
-            <Text> Protected Home Screen </Text>
+            <Text> Loading Screen... </Text>
         </View>
-    );
-};
+    )
+}
 
-export default HomeScreen;
+export default SplashScreen;

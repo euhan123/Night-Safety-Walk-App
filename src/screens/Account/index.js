@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     },
 });
 
-const AccountScreen = () => {
+function AccountScreen() {
     return (
         <View style = {styles.container}>
             <Text> Protected Account Screen </Text>

@@ -9,7 +9,7 @@ const styles = StyleSheet.create ({
     },
 });
 
-const PasswordForgetScreen = () => {
+function PasswordForgetScreen() {
     return (
         <View style = {styles.container}>
             <Text> Password Forget Screen </Text>

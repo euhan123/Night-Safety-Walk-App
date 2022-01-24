@@ -1,26 +1,10 @@
 {
-  "function": {
-    "app42bd8a70": {
-      "build": true,
+  "auth": {
+    "app02ebc18d": {
+      "service": "Cognito",
       "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": []
-    }
-  },
-  "api": {
-    "api9f9c28cf": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "app42bd8a70",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        }
-      ]
+      "dependsOn": [],
+      "customAuth": false
     }
   }
 }
