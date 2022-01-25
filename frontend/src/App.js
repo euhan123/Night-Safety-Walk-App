@@ -8,6 +8,12 @@ import { AppContext } from "./lib/contextLib";
 import { Auth } from "aws-amplify";
 import { useHistory } from "react-router-dom";
 import { onError } from "./lib/errorLib";
+import Amplify from "aws-amplify";
+import awsConfig from "./aws-exports";
+import { withAuthenticator } from 'aws-amplify-react-native';
+
+Amplify.configure(awsConfig);
+
 
 function App() {
   const history = useHistory();
@@ -74,4 +80,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);
