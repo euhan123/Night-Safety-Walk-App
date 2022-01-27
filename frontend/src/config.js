@@ -1,18 +1,18 @@
 const config = {
     // Backend config
     s3: {
-      REGION: process.env.REACT_APP_REGION,
-      BUCKET: process.env.REACT_APP_BUCKET,
+      REGION: "us-west-2",
+      BUCKET: "calmemaybe",
     },
     apiGateway: {
-      REGION: process.env.REACT_APP_REGION,
-      URL: process.env.REACT_APP_API_URL,
+      REGION: "us-west-2",
+      URL: "process.env.REACT_APP_API_URL",
     },
     cognito: {
-      REGION: process.env.REACT_APP_REGION,
-      USER_POOL_ID: process.env.REACT_APP_USER_POOL_ID,
-      APP_CLIENT_ID: process.env.REACT_APP_USER_POOL_CLIENT_ID,
-      IDENTITY_POOL_ID: process.env.REACT_APP_IDENTITY_POOL_ID,
+      REGION: "us-west-2",
+      USER_POOL_ID: "us-west-2_uBfWCPA8l",
+      APP_CLIENT_ID: "1ma6032lii3is7bc4k9egdguig",
+      IDENTITY_POOL_ID: "us-west-2:adfe12fc-fbaa-4a8b-87a9-015590bfd183",
     },
   };
   

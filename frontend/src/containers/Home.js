@@ -6,7 +6,7 @@ export default function Home() {
     <div className="Home">
       <div className="lander">
         <h1>Cal Me Maybe</h1>
-        <p className="text-muted">BE SAFE!!</p>
+        <p className="text-muted">A night safety walking app for Berkeley students.</p>
       </div>
     </div>
   );

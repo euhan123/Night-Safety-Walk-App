@@ -8,11 +8,6 @@ import { AppContext } from "./lib/contextLib";
 import { Auth } from "aws-amplify";
 import { useHistory } from "react-router-dom";
 import { onError } from "./lib/errorLib";
-import Amplify from "aws-amplify";
-import awsConfig from "./aws-exports";
-import { withAuthenticator } from 'aws-amplify-react-native';
-
-Amplify.configure(awsConfig);
 
 
 function App() {
@@ -55,6 +50,11 @@ function App() {
             Cal Me Maybe
           </Navbar.Brand>
         </LinkContainer>
+        {isAuthenticated && <LinkContainer to = "/profile">
+          <Navbar.Brand className = "font-weight-bold text-muted">
+            Profile
+          </Navbar.Brand>
+        </LinkContainer>}
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Nav activeKey={window.location.pathname}>
@@ -80,4 +80,4 @@ function App() {
   );
 }
 
-export default withAuthenticator(App);
+export default App;
