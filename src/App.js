@@ -13,6 +13,7 @@ import SignInScreen from './screens/SignIn.js';
 import SignUpScreen from './screens/SignUp.js';
 //import ProfileScreen from './screens/Profile';
 import HomeScreen from './screens/Home.js';
+import ConfirmScreen from './screens/Confirm.js';
 
 
 /* const Drawer = createDrawerNavigator();
@@ -53,24 +54,21 @@ const RootStack = createStackNavigator();
 
 const App = () => {
     const [isAuthenticated, setIsAuthenticated] = React.useState(false);
-    App.isAuthenticated = isAuthenticated;
-    App.setIsAuthenticated = setIsAuthenticated;
+    const emailVal = React.createContext("");
 
     const handleSignIn = () => {
         //imlement actual sign in
-        setIsAuthenticated(true);
+
     };
 
     const handleSignOut = () => {
         //implement actual sign out
-
         setIsAuthenticated(false);
     }
 
-    const handleSignUp = () => {
-        //implement actual sign up
-
-        setIsAuthenticated(true);
+    const handleSignUp = ( {navigation} ) => {
+        //implement actual sign up  
+        navigation.navigate(ConfirmScreen);
     }
 
     return (
@@ -80,6 +78,11 @@ const App = () => {
                     <RootStack.Screen 
                         name = "Home" 
                         component = {HomeScreen}
+                        options={{
+                            headerRight: () => (
+                              <Button onPress={handleSignOut} title="Sign Out" />
+                            ),
+                          }}
                     />
                 ) : (
                     <>
@@ -92,18 +95,19 @@ const App = () => {
                         />
                         <RootStack.Screen name = "Sign In">
                             {(props) => (
-                                <SignInScreen {...props} onSignIn = {handleSignIn} />
+                                <SignInScreen {...props} onSignIn = {handleSignIn} LogIn = { setIsAuthenticated } />
                             )}
                         </RootStack.Screen> 
                         <RootStack.Screen name = "Sign Up">
                             {(props) => (
-                                <SignUpScreen {...props} onSignUp = {handleSignUp} />
+                                <SignUpScreen {...props} onSignUp = {handleSignUp} LogIn = { setIsAuthenticated } />
                             )}
                         </RootStack.Screen>
-                        {/* <RootStack.Screen 
-                            name = "Password Forget"
-                            component = {PasswordForgetScreen}
-                        /> */}
+                        <RootStack.Screen name = "Confirm Screen">
+                            {(props) => (
+                                <ConfirmScreen {...props} LogIn = { setIsAuthenticated } />
+                            )}
+                        </RootStack.Screen>
                     </>
                 )}
             </RootStack.Navigator>

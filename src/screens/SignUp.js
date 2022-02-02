@@ -19,10 +19,15 @@ const styles = StyleSheet.create ({
     },
 });
 
-const SignUpScreen = ({ onSignUp, navigation }) => {
+const SignUpScreen = ({ navigation }) => {
     const [email, onChangeEmail] = React.useState("");
     const [password, onChangePass] = React.useState("");
     const [confirmPass, onChangeConfirm] = React.useState("");
+
+    const fields = {
+        email: "",
+        password: "",
+    }
     
 
     function validateForm() {
@@ -45,8 +50,12 @@ const SignUpScreen = ({ onSignUp, navigation }) => {
                 });
                 showMessage({
                     message: "Success!",
-                }); 
-                navigation.navigate(path = "../Confirm/index.js")
+                });
+                fields.email = email;
+                fields.password = password;
+                navigation.navigate('Confirm Screen', {
+                    paramKey: fields,
+                });
             } catch (e) {
                 showMessage({
                     message: "Error",

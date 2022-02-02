@@ -18,14 +18,14 @@ const styles = StyleSheet.create({
     },
 });
 
-const SignInScreen = ({ onSignIn, navigation}) => {
+const SignInScreen = ({ LogIn, navigation}) => {
     const [email, onChangeEmail] = React.useState("");
     const [password, onChangePass] = React.useState("");
 
     async function handleSubmit() {    
         try {
           await Auth.signIn(email, password);
-          setIsAuthenticated(true);
+          LogIn(true);
         } catch (e) {
         }
     }
