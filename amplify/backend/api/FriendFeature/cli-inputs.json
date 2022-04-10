@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "FriendFeature",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "C:\\Users\\euhan\\Desktop\\CMM\\amplify\\backend\\api\\FriendFeature\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authcmm728da48d"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 365,
+        "apiKeyExpirationDate": "2023-04-10T05:20:22.463Z",
+        "keyDescription": ""
+      }
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "CMM",
-    "slug": "CMM",
+    "name": "Cal me Maybe",
+    "slug": "calmemaybe",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -17,9 +17,16 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.euhan123.calmemaybe",
+      "buildNumber": "1.0.0",
+      "supportsTablet": true,
+      "config": {
+        "googleMapsApiKey": "AIzaSyCa2457Fyq5lUXmAzd9P5FAV_yZs0M-kMY"
+      }
     },
     "android": {
+      "package": "com.euhan123.calmemaybe",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
@@ -27,6 +34,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": ""
   }
 }
