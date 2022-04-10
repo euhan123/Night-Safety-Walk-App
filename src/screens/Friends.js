@@ -40,18 +40,6 @@ class Friend extends React.Component {
         const allData = await API.graphql(graphqlOperation(queries.listSelves, {filter: {name: {eq: userId}}}))
         this.setState({ friends: selfData.data.listFriends.items, valid: allData.data.listSelves.items })
         console.log(this.state.valid)
-        for(let i = 0; i < this.state.valid.length; i += 1){
-            if (userId == this.state.valid[i].name) {
-                this.setState({userPresent: true})
-            }
-        }
-        console.log(this.state.userPresent)
-        if(this.state.userPresent == false) {
-            try {   
-                await API.graphql(graphqlOperation(mutations.createSelf, {input: {name: userId}}))
-            } catch(err) {
-            }
-        }
     }
 
     getFriendsList = async () => {

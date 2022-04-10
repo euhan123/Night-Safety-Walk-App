@@ -25,7 +25,7 @@ import LandingScreen from './screens/Landing.js';
 import SignInScreen from './screens/SignIn.js';
 import SignUpScreen from './screens/SignUp.js';
 //import ProfileScreen from './screens/Profile';
-import HomeScreen from './screens/Home.js';
+import Home from './screens/Home.js';
 import ConfirmScreen from './screens/Confirm.js';
 import MapScreen from './screens/Map.js';
 import Profile from './screens/Profile.js';
@@ -70,7 +70,7 @@ const App = () => {
 
     const handleSignOut = () => {
         //implement actual sign out
-        await Auth.signOut();
+        Auth.signOut();
         setIsAuthenticated(false);
     }
 
@@ -84,11 +84,11 @@ const App = () => {
         console.log(fields);
         return (
             <Drawer.Navigator>
-                <Drawer.Screen name = "Home" component = {HomeScreen} options = {{ headerShown: false }} />
+                <Drawer.Screen name = "Home" component = {Home} options = {{ headerShown: false }} />
                 <Drawer.Screen name = "Map" component = {MapScreen} options = {{ headerShown: false }}/>
                 <Drawer.Screen name = "Profile" options = {{ headerShown: false }}>
                             {(props) => (
-                                <AddFriendScreen {...props} vars = {fields} />
+                                <Profile {...props} vars = {fields} />
                             )}
                 </Drawer.Screen> 
                 <Drawer.Screen name = "Add Friends" component = {Friend} options = {{ headerShown: false }} vars = {fields}/>
