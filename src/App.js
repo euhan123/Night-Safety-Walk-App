@@ -28,7 +28,7 @@ import SignUpScreen from './screens/SignUp.js';
 import HomeScreen from './screens/Home.js';
 import ConfirmScreen from './screens/Confirm.js';
 import MapScreen from './screens/Map.js';
-import AddFriendScreen from './screens/addFriend.js';
+import Profile from './screens/Profile.js';
 import Friend from './screens/Friends.js';
 
 const Drawer = createDrawerNavigator();
@@ -70,6 +70,7 @@ const App = () => {
 
     const handleSignOut = () => {
         //implement actual sign out
+        await Auth.signOut();
         setIsAuthenticated(false);
     }
 
@@ -85,12 +86,12 @@ const App = () => {
             <Drawer.Navigator>
                 <Drawer.Screen name = "Home" component = {HomeScreen} options = {{ headerShown: false }} />
                 <Drawer.Screen name = "Map" component = {MapScreen} options = {{ headerShown: false }}/>
-                <Drawer.Screen name = "Add Friend" options = {{ headerShown: false }}>
+                <Drawer.Screen name = "Profile" options = {{ headerShown: false }}>
                             {(props) => (
                                 <AddFriendScreen {...props} vars = {fields} />
                             )}
                 </Drawer.Screen> 
-                <Drawer.Screen name = "Friend" component = {Friend} options = {{ headerShown: false }} vars = {fields}/>
+                <Drawer.Screen name = "Add Friends" component = {Friend} options = {{ headerShown: false }} vars = {fields}/>
             </Drawer.Navigator>
         );
     };
